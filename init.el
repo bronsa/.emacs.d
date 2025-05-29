@@ -136,6 +136,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cider-deprecated-face ((t (:underline t))))
  '(completions-common-part ((t (:foreground "color-27"))))
  '(custom-group-tag ((t (:inherit variable-pitch :foreground "color-33" :weight bold :height 1.2))))
  '(custom-variable-tag ((t (:foreground "color-33" :weight bold))))
