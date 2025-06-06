@@ -442,3 +442,5 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
   :lighter " CljFmt")
 
 (add-hook 'clojure-mode-hook 'cljfmt-format-on-save-mode)
+
+(add-hook 'git-timemachine-mode-hook #'(lambda () (font-lock-mode t)))

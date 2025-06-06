@@ -156,6 +156,7 @@ pair.
         auto-highlight-symbol
         cider
         cider-ns
+        cider-scratch
         clojure-mode
         color-theme
         company
