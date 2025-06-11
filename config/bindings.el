@@ -43,30 +43,12 @@
 
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
-;; (define-key erc-mode-map (kbd "C-<up>") 'erc-previous-command)
-;; (define-key erc-mode-map (kbd "C-<down>") 'erc-next-command)
 
 (global-set-key (kbd "M-q") 'join-line)
 (global-set-key (kbd "ESC <up>") 'paredit-splice-sexp-killing-backward)
 (global-set-key (kbd "C-c g") 'magit-status)
 
 (global-set-key (kbd "<insertchar>") 'overwrite-mode)
-
-;; (define-key mpc-songs-mode-map (kbd "RET") 'mpc-play-at-point)
-;; (define-key mpc-songs-mode-map (kbd "M-RET") 'mpc-play)
-;; (define-key mpc-mode-map (kbd "j") 'mpc-select)
-;; (define-key mpc-mode-map (kbd "s") 'mpc-songs-search)
-;; (define-key mpc-mode-map (kbd "y") 'mpc-playlist-add)
-;; (define-key mpc-mode-map (kbd "k") 'mpc-playlist-delete)
-;; (define-key mpc-mode-map (kbd "SPC") 'mpc-toggle-pause)
-;; (define-key mpc-mode-map (kbd "m") 'mpc-select-toggle)
-;; (define-key mpc-mode-map (kbd "S-SPC") 'mpc-select-extend)
-;; (define-key mpc-mode-map (kbd "n") 'mpc-next)
-;; (define-key mpc-mode-map (kbd "p") 'mpc-prev)
-;; (define-key mpc-mode-map (kbd "l") 'mpc-playlist)
-;; (define-key mpc-mode-map (kbd "M-a") 'mpc-jump-to-albums)
-;; (define-key mpc-mode-map (kbd "a") 'mpc-jump-to-artists)
-;; (define-key mpc-mode-map (kbd "M-s") 'mpc-jump-to-songs)
 
 (global-set-key (kbd "C-x l") 'toggle-input-method)
 
@@ -141,7 +123,6 @@
 (global-unset-key (kbd "<C-down-mouse-2>"))
 (global-unset-key (kbd "<C-down-mouse-3>"))
 
-;; (define-key erc-mode-map (kbd "C-M-i") nil)
 
 (define-key paredit-mode-map (kbd "C-M-d") 'mark-sexp)
 
