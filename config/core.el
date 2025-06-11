@@ -222,8 +222,6 @@ pair.
       '(lisp
         global-modes
         misc
-        ;; erc
-        ;; mpc
         look-and-feel
         tabbar
         bindings
