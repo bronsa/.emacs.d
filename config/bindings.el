@@ -172,5 +172,5 @@
 (define-key cider-repl-mode-map (kbd "C-c C-l") #'cider-repl-clear-buffer)
 (define-key cider-repl-mode-map (kbd "C-M-q") #'prog-indent-sexp)
 
-o(define-key cider-clojure-interaction-mode-map [remap cider-load-file]
+(define-key cider-clojure-interaction-mode-map [remap cider-load-file]
             #'cider-scratch-reset)
