@@ -13,6 +13,7 @@
                  (equal "*OCaml*" (buffer-name (current-buffer)))
                  (equal "*ielm*" (buffer-name (current-buffer)))
                  (equal "*Gemini*" (buffer-name (current-buffer)))
+                 (equal "*Claude*" (buffer-name (current-buffer)))
                  (equal "*Python*" (buffer-name (current-buffer)))
                  (string-match "\\*SQL.*\\*" (buffer-name (current-buffer)))
                  (string-match "\\*sql.*\\*" (buffer-name (current-buffer))))
@@ -57,9 +58,11 @@
                                   (not (string-match "\\*cider-error.*\\*" (buffer-name b))))
                              (member (buffer-name b)
                                      (list
+                                      "*Colors*"
                                       "*Async-native-compile-log*"
                                       "*Native-compile-Log*"
                                       "*eldoc*"
+                                      "*gptel-log*"
                                       "*Flymake log*"
                                       "*Flycheck errors*"
                                       "*Flycheck error messages*"
