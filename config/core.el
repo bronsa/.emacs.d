@@ -180,6 +180,7 @@ pair.
         gptel-gemini
         gptel-anthropic
         gptel-integrations
+        gptel-rewrite
         ido-completing-read+
         iedit
         imandra-mode
