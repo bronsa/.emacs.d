@@ -179,6 +179,7 @@ pair.
         gptel-curl
         gptel-gemini
         gptel-anthropic
+        gptel-integrations
         ido-completing-read+
         iedit
         imandra-mode

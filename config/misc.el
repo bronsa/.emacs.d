@@ -457,7 +457,11 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
  )
 
 
-;; (add-hook 'after-init-hook #'mcp-hub-start-all-server)
-
-
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+
+(setq mcp-hub-servers
+      '(("filesystem" .
+         (:command "npx" :args
+                   ("-y" "@modelcontextprotocol/server-filesystem" "/home/bronsa/src/metabase/src")))))
+
+(add-hook 'after-init-hook #'mcp-hub-start-all-server)
