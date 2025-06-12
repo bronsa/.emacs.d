@@ -283,3 +283,9 @@
 [submodule "libs/flycheck-clj-kondo"]
 	path = libs/flycheck-clj-kondo
 	url = https://github.com/borkdude/flycheck-clj-kondo
+[submodule "libs/gptel"]
+	path = libs/gptel
+	url = https://github.com/karthink/gptel.git
+[submodule "libs/mcp.el"]
+	path = libs/mcp.el
+	url = https://github.com/lizqwerscott/mcp.el

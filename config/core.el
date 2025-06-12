@@ -93,6 +93,7 @@ pair.
         flycheck-popup-tip
         flycheck-eglot
         ggtags
+        gptel
         graphql
         haskell-mode
         hcl-mode
@@ -109,6 +110,7 @@ pair.
         markup-faces
         magithub
         magit/lisp
+        mcp.el
         merlin/emacs
         merlin-eldoc
         multiple-cursors
@@ -173,6 +175,10 @@ pair.
         flycheck-eglot
         flycheck-popup-tip
         git-timemachine
+        gptel
+        gptel-curl
+        gptel-gemini
+        gptel-anthropic
         ido-completing-read+
         iedit
         imandra-mode
@@ -182,6 +188,8 @@ pair.
         inf-clojure
         ipl-mode
         magit
+        mcp
+        mcp-hub
         markdown-mode
         merlin
         merlin-company

@@ -24,71 +24,47 @@
  ;; If there is more than one, they won't work right.
  '(company-dabbrev-other-buffers nil)
  '(erc-modules
-   '(autojoin track completion irccontrols log netsplit match noncommands readonly stamp autoaway log scrolltobottom fill truncate ring networks move-to-prompt))
+   '(autojoin track completion irccontrols log netsplit match noncommands
+              readonly stamp autoaway log scrolltobottom fill truncate
+              ring networks move-to-prompt))
  '(flycheck-checker-error-threshold nil)
  '(flycheck-popup-tip-error-prefix "! ")
  '(safe-local-variable-values
-   '((elisp-lint-indent-specs
-      (if-let* . 2)
-      (when-let* . 1)
-      (let* . defun)
-      (nrepl-dbind-response . 2)
-      (cider-save-marker . 1)
-      (cider-propertize-region . 1)
-      (cider-map-repls . 1)
-      (cider--jack-in . 1)
-      (cider--make-result-overlay . 1)
-      (insert-label . defun)
-      (insert-align-label . defun)
-      (insert-rect . defun)
-      (cl-defun . 2)
-      (with-parsed-tramp-file-name . 2)
-      (thread-first . 0)
-      (thread-last . 0)
-      (transient-define-prefix . defmacro)
-      (transient-define-suffix . defmacro))
+   '((elisp-lint-indent-specs (if-let* . 2) (when-let* . 1)
+                              (let* . defun)
+                              (nrepl-dbind-response . 2)
+                              (cider-save-marker . 1)
+                              (cider-propertize-region . 1)
+                              (cider-map-repls . 1)
+                              (cider--jack-in . 1)
+                              (cider--make-result-overlay . 1)
+                              (insert-label . defun)
+                              (insert-align-label . defun)
+                              (insert-rect . defun) (cl-defun . 2)
+                              (with-parsed-tramp-file-name . 2)
+                              (thread-first . 0) (thread-last . 0)
+                              (transient-define-prefix . defmacro)
+                              (transient-define-suffix . defmacro))
      (cljr-print-right-margin . 118)
      (cljr-insert-newline-after-require . t)
      (cljr-favor-prefix-notation)
-     (eval define-clojure-indent
-           (l/matcha
-            '(1
-              (:defn)))
-           (l/matche
-            '(1
-              (:defn)))
-           (p.types/def-abstract-type
-            '(1
-              (:defn)))
-           (p.types/defprotocol+
-            '(1
-              (:defn)))
-           (p.types/defrecord+
-            '(2 nil nil
-                (:defn)))
-           (p.types/deftype+
-            '(2 nil nil
-                (:defn)))
-           (p/def-map-type
-            '(2 nil nil
-                (:defn)))
-           (p/defprotocol+
-            '(1
-              (:defn)))
-           (p/defrecord+
-            '(2 nil nil
-                (:defn)))
-           (p/deftype+
-            '(2 nil nil
-                (:defn)))
-           (tools.macro/macrolet
-            '(1
-              ((:defn))
-              :form)))
+     (eval define-clojure-indent (l/matcha '(1 (:defn)))
+           (l/matche '(1 (:defn)))
+           (p.types/def-abstract-type '(1 (:defn)))
+           (p.types/defprotocol+ '(1 (:defn)))
+           (p.types/defrecord+ '(2 nil nil (:defn)))
+           (p.types/deftype+ '(2 nil nil (:defn)))
+           (p/def-map-type '(2 nil nil (:defn)))
+           (p/defprotocol+ '(1 (:defn)))
+           (p/defrecord+ '(2 nil nil (:defn)))
+           (p/deftype+ '(2 nil nil (:defn)))
+           (tools.macro/macrolet '(1 ((:defn)) :form)))
      (eval put 'mu/defn 'clojure-doc-string-elt 2)
      (eval put 'mr/def 'clojure-doc-string-elt 2)
-     (eval put 'mi/define-batched-hydration-method 'clojure-doc-string-elt 3)
-     (eval put 'mi/define-simple-hydration-method 'clojure-doc-string-elt 3)
+     (eval put 'mi/define-batched-hydration-method
+           'clojure-doc-string-elt 3)
+     (eval put 'mi/define-simple-hydration-method
+           'clojure-doc-string-elt 3)
      (eval put 'methodical/defmulti 'clojure-doc-string-elt 2)
      (eval put 'methodical/defmethod 'clojure-doc-string-elt 3)
      (eval put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
@@ -99,29 +75,17 @@
      (eval put 'define-premium-feature 'clojure-doc-string-elt 2)
      (ftf-project-finders ftf-get-top-git-dir)
      (project-vc-merge-submodules)
-     (eval tuareg-opam-update-env
-           (projectile-project-root))
-     (projectile-project-type . "make")
-     (Syntax . Common-lisp)
+     (eval tuareg-opam-update-env (projectile-project-root))
+     (projectile-project-type . "make") (Syntax . Common-lisp)
      (Package . XREF)
-     (eval define-clojure-indent
-           (lazy-seq 0)
-           (match 1)
-           (try+ 0)
+     (eval define-clojure-indent (lazy-seq 0) (match 1) (try+ 0)
            (pdoseq 2))
-     (eval define-clojure-indent
-           (lazy-seq 0)
-           (match 1)
-           (try+ 0))
-     (eval define-clojure-indent
-           (lazy-seq 0)
-           (match 1)
-           (try+ 0)
+     (eval define-clojure-indent (lazy-seq 0) (match 1) (try+ 0))
+     (eval define-clojure-indent (lazy-seq 0) (match 1) (try+ 0)
            (deftype 'defun))
      (checkdoc-package-keywords-flag)
      (bug-reference-bug-regexp . "#\\(?2:[[:digit:]]+\\)")
-     (js2-basic-offset . 2)
-     (js-indent-level . 2)
+     (js2-basic-offset . 2) (js-indent-level . 2)
      (css-indent-offset . 2)
      (cider-cljs-lein-repl . "(user/cljs-repl)")
      (nameless-current-name . "cider")
@@ -162,6 +126,8 @@
  '(neo-file-link-face ((t (:foreground "white"))))
  '(org-block ((t (:inherit shadow :foreground "color-252"))))
  '(popup-tip-face ((t (:background "brightblack" :foreground "white"))))
+ '(pulse-highlight-face ((t (:extend nil :background "color-234"))))
+ '(pulse-highlight-start-face ((t (:background "color-234"))))
  '(secondary-selection ((t (:underline t))))
  '(shadow ((t (:foreground "color-242"))))
  '(transient-active-infix ((t (:underline t :weight ultra-bold))))

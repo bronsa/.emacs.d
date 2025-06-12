@@ -12,6 +12,7 @@
                  (equal "*inferior-lisp*" (buffer-name (current-buffer)))
                  (equal "*OCaml*" (buffer-name (current-buffer)))
                  (equal "*ielm*" (buffer-name (current-buffer)))
+                 (equal "*Gemini*" (buffer-name (current-buffer)))
                  (equal "*Python*" (buffer-name (current-buffer)))
                  (string-match "\\*SQL.*\\*" (buffer-name (current-buffer)))
                  (string-match "\\*sql.*\\*" (buffer-name (current-buffer))))

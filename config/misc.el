@@ -444,3 +444,16 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
 (add-hook 'clojure-mode-hook 'cljfmt-format-on-save-mode)
 
 (add-hook 'git-timemachine-mode-hook #'(lambda () (font-lock-mode t)))
+
+;; (gptel-make-anthropic "Claude" :stream t :key gptel-api-key)
+
+(setq
+
+ gptel-model 'gemini-2.0-flash
+ gptel-backend (gptel-make-gemini "Gemini" :key gptel-api-key :stream t))
+
+
+(add-hook 'after-init-hook #'mcp-hub-start-all-server)
+
+
+(add-hook 'gptel-post-response-functions 'gptel-end-of-response)
