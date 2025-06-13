@@ -2,12 +2,12 @@
   "Handle .class files by putting the output of javap in the buffer."
   (cond
    ((eq op 'get-file-buffer)
-    (let ((file (car args)))
-      (with-current-buffer (create-file-buffer file)
+    (let ((the-file (car args)))
+      (with-current-buffer (create-file-buffer the-file)
         (call-process "javap" nil (current-buffer) nil "-verbose"
-                      "-classpath" (file-name-directory file)
-                      (file-name-sans-extension (file-name-nondirectory file)))
-        (setq buffer-file-name file)
+                      "-classpath" (file-name-directory the-file)
+                      (file-name-sans-extension (file-name-nondirectory the-file)))
+        (setq buffer-file-name the-file)
         (setq buffer-read-only t)
         (set-buffer-modified-p nil)
         (goto-char (point-min))

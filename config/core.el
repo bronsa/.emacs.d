@@ -176,6 +176,7 @@ pair.
         flycheck-popup-tip
         git-timemachine
         gptel
+        gptel-context
         gptel-curl
         gptel-gemini
         gptel-anthropic

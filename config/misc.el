@@ -451,11 +451,16 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
  gptel-anthropic-backend (gptel-make-anthropic "Claude" :stream t :key gptel-api-key)
  gptel-gemini-backend (gptel-make-gemini "Gemini" :key gptel-api-key :stream t)
 
- gptel-model 'claude-sonnet-4-20250514 ;; 'gemini-2.0-flash
+ gptel-model 'claude-sonnet-4-20250514
  gptel-backend gptel-anthropic-backend
 
- )
+ ;; gptel-model 'gemini-2.0-flash
+ ;; gptel-model 'gemini-2.5-flash-preview-05-20
+ ;; gptel-backend gptel-gemini-backend
 
+ gptel-default-mode 'markdown-mode
+
+ )
 
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
 
