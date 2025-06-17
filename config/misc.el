@@ -183,7 +183,6 @@
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 (add-to-list 'auto-mode-alist '("\\.ml[ip]?\\'" . tuareg-mode))
-(add-to-list 'auto-mode-alist '("\\.iml[i]?\\'" . imandra-mode))
 
 (defun rename-current-buffer-file ()
   (interactive)
@@ -237,7 +236,6 @@
 (setq olivetti-body-width 86)
 
 
-(add-to-list 'auto-mode-alist '("\\.ipl[d]?\\'" . ipl-mode))
 (add-to-list 'auto-mode-alist '("\\.tf\\'" . terraform-mode))
 
 (setq csv-separators '("," ";"))
@@ -261,20 +259,10 @@
 (add-hook 'tuareg-mode-hook (lambda () (abbrev-mode -1) (ocp-setup-indent)))
 (add-hook 'tuareg-interactive-mode-hook (lambda () (abbrev-mode -1)))
 
-(add-hook 'reason-mode-hook (lambda ()
-                              ;; (add-hook 'before-save-hook 'refmt-before-save)
-                              (merlin-mode)))
-
 (add-hook 'tuareg-mode-hook (lambda () (auto-highlight-symbol-mode)))
 
-;; (imandra-merlin-setup-eldoc)
-
-(defun merlin-restart ()
-  (interactive)
-  (call-interactively 'imandra--merlin-restart))
 
 (add-hook 'before-save-hook 'ocamlformat-before-save)
-;; (add-hook 'tuareg-mode-hook 'imandra--setup-eldoc)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 (add-to-list 'auto-mode-alist '("\\.xtend\\'" . java-mode))
 (add-to-list 'auto-mode-alist '("\\.proto\\'" . javascript-mode))
@@ -314,14 +302,7 @@
             (flycheck-mode t)
             (flycheck-ocaml-setup)))
 
-(flycheck-define-generic-checker 'imandra-merlin
-  "A syntax checker for Imandra using Merlin Mode."
-  :start #'flycheck-ocaml-merlin-start
-  :verify #'flycheck-verify-ocaml-merlin
-  :modes '(imandra-mode tuareg-mode)
-  :predicate (lambda () merlin-mode))
 
-(add-to-list 'flycheck-checkers 'imandra-merlin)
 
 (add-to-list 'display-buffer-alist
              `(,(rx bos "*Flycheck errors*" eos)
@@ -344,7 +325,7 @@
           (error (switch-to-buffer (other-buffer buf))))
       (flycheck-list-errors))))
 
-(add-to-list 'imenu-anywhere-friendly-modes '(tuareg-mode imandra-mode))
+(add-to-list 'imenu-anywhere-friendly-modes '(tuareg-mode))
 
 (setq-default
  imenu-anywhere-buffer-list-function
@@ -356,21 +337,12 @@
 
 (setq-default resize-mini-windows t)
 
-(advice-add 'imandra--merlin-restart :after #'flycheck-buffer)
 
 (add-hook 'merlin-mode-hook (lambda () (merlin-use-merlin-imenu)))
 ;; (add-hook 'flycheck-mode-hook 'flycheck-popup-tip-mode)
 
 (setq transient-display-buffer-action '(display-buffer-below-selected))
 
-(defun imandra--merlin-restart ()
-  (interactive)
-  (require 'opam-switch-mode)
-  (call-interactively #'opam-switch-set-switch)
-  (merlin-stop-server))
-
-(add-to-list 'eglot-server-programs '(ipl-mode . ("ipl-server")))
-(add-hook 'ipl-mode-hook (lambda () (eglot-ensure)))
 
 (add-hook 'eglot-managed-mode-hook (lambda () (flycheck-eglot-mode 1)))
 
@@ -387,14 +359,6 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
       (if (looking-at "['a-z_0-9A-Z.]*['a-z_A-Z0-9]")
           (cons (point) (match-end 0)) ; returns the bounds
         nil)))) ; no atom at point
-
-(cl-defmethod eglot-handle-notification
-  :around (server (method (eql textDocument/publishDiagnostics)) &key uri diagnostics &allow-other-keys)
-  (let* ((is-ipl (string-equal "ipl" (file-name-extension uri)))
-         (diagnostics
-          (if is-ipl (cl-map 'vector (lambda (x) (cl-remf x :code) x) diagnostics)
-            diagnostics)))
-    (cl-call-next-method server method :uri uri :diagnostics diagnostics)))
 
 (setq-default merlin-completion-with-doc t)
 (setq-default merlin-type-after-locate t)

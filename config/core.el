@@ -101,10 +101,8 @@ pair.
         ht
         ido-completing-read-plus
         iedit
-        imandra-mode
         imenu-anywhere
         inf-clojure
-        ipl-mode
         less-css-mode
         markdown-mode
         markup-faces
@@ -184,12 +182,8 @@ pair.
         gptel-rewrite
         ido-completing-read+
         iedit
-        imandra-mode
-        imandra-mode-merlin
-        imandra-mode-ocamlformat
         imenu-anywhere
         inf-clojure
-        ipl-mode
         magit
         mcp
         mcp-hub
@@ -209,7 +203,7 @@ pair.
         paren
         projectile
         popwin
-        reason-mode
+        ;; reason-mode
         rust-mode
         saveplace
         smex
