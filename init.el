@@ -109,6 +109,7 @@
  '(ediff-even-diff-C ((t (:background "color-238"))))
  '(ediff-odd-diff-C ((t (:background "color-239"))))
  '(eshell-ls-directory ((t (:foreground "Blue"))))
+ '(gptel-context-highlight-face ((t nil)))
  '(help-key-binding ((t (:inherit fixed-pitch :foreground "color-245"))))
  '(highlight ((t (:background "#1f1f1f"))))
  '(magit-branch-current ((t (:inherit magit-branch-local))))
