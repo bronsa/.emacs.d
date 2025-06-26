@@ -434,3 +434,14 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
                    ("-y" "@modelcontextprotocol/server-filesystem" "/home/bronsa/src/metabase/src")))))
 
 (add-hook 'after-init-hook #'mcp-hub-start-all-server)
+
+(defun magit-git-insert--add-ref-limits (orig-fun &rest args)
+  (if (string= (car args) "for-each-ref")
+      (apply orig-fun
+             "for-each-ref"
+             "--count=50"
+             "--sort=-committerdate"
+             (cdr args))
+    (apply orig-fun args)))
+
+(advice-add 'magit-git-insert :around #'magit-git-insert--add-ref-limits)
