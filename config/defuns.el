@@ -66,7 +66,7 @@
               (insert "-*- mode: grep; default-directory \"" default-directory "\" -*-\n\n" magit-git-executable
                       " grep -n "
                       (shell-quote-argument pattern) "\n\n")
-              (magit-git-insert (list "grep" "--line-number" pattern))
+              (magit-git-insert "grep" "--line-number" pattern)
               (grep-mode)
               (pop-to-buffer (current-buffer)))
           (message "not in a git directory"))))))

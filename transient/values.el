@@ -1,5 +1,7 @@
 ((magit-commit "--no-verify")
  (magit-fetch "--prune")
  (magit-log:magit-log-mode "-n256" "--graph" "--color" "--decorate")
+ (magit-margin-settings)
  (magit-merge "--no-ff")
- (magit-rebase "--autostash"))
+ (magit-rebase "--autostash")
+ (magit-show-refs))

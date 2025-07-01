@@ -8,7 +8,11 @@
         isearch-abort
         isearch-forward-regexp
         kill-visual-line
+        paredit-doublequote
+        paredit-forward-delete
         paredit-forward-kill-word
+        paredit-forward-slurp-sexp
+        paredit-kill
         ))
 
 (setq mc/cmds-to-run-once
