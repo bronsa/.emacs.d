@@ -445,3 +445,21 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
     (apply orig-fun args)))
 
 (advice-add 'magit-git-insert :around #'magit-git-insert--add-ref-limits)
+
+
+;; backported from 0.8
+(cl-defmethod transient-init-scope ((_   transient-suffix))
+  "Noop." nil)
+
+(defun transient-scope (&optional prefixes)
+  (if prefixes
+      (let ((prefixes (ensure-list prefixes)))
+        (if-let* ((obj (or (and-let* ((obj transient-current-prefix))
+                             (and (memq (oref obj command) prefixes) obj))
+                           (and-let* ((obj transient--prefix))
+                             (and (memq (oref obj command) prefixes) obj)))))
+            (oref obj scope)
+          (and (get (car prefixes) 'transient--prefix)
+               (oref (transient--init-prefix (car prefixes)) scope))))
+    (and-let* ((obj (transient-prefix-object)))
+      (oref obj scope))))

@@ -25,3 +25,4 @@
 (diff-hl-margin-mode)
 (ido-ubiquitous-mode 1)
 (global-so-long-mode 1)
+(which-key-mode)

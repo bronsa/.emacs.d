@@ -65,6 +65,7 @@
                                       "*Native-compile-Log*"
                                       "*eldoc*"
                                       "*gptel-log*"
+                                      "*gptel-context*"
                                       "*Flymake log*"
                                       "*Flycheck errors*"
                                       "*Flycheck error messages*"
