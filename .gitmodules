@@ -10,9 +10,6 @@
 [submodule "libs/queue"]
 	path = libs/queue
 	url = https://github.com/ffailla/elpa-queue.git
-[submodule "libs/spinner"]
-	path = libs/spinner
-	url = https://github.com/Malabarba/spinner.el.git
 [submodule "libs/company"]
 	path = libs/company
 	url = https://github.com/company-mode/company-mode.git

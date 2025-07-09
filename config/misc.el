@@ -439,7 +439,7 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
   (if (string= (car args) "for-each-ref")
       (apply orig-fun
              "for-each-ref"
-             "--count=100"
+             "--count=300"
              "--sort=-committerdate"
              (cdr args))
     (apply orig-fun args)))
