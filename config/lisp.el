@@ -1,6 +1,7 @@
 (dolist (hook '(clojure-mode-hook
                 lisp-mode-hook
                 scheme-mode-hook
+                cider-repl-mode-hook
                 emacs-lisp-mode-hook))
   (add-hook hook (lambda () (eldoc-mode 1)))
   (add-hook hook (lambda () (enable-paredit-mode)))

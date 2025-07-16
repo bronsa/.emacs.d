@@ -75,7 +75,7 @@ pair.
         company
         compat
         csv-mode
-	    dash
+        dash
         dockerfile-mode
         dune/editor-integration/emacs
         diff-hl
@@ -120,7 +120,7 @@ pair.
         ocp-indent/tools
         paredit
 	    parseedn
-	    parseclj
+        parseclj
         project
         projectile
         popup
