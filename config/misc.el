@@ -415,7 +415,7 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
  gptel-anthropic-backend (gptel-make-anthropic "Claude" :stream t :key gptel-api-key)
  gptel-gemini-backend (gptel-make-gemini "Gemini" :key gptel-api-key :stream t)
 
- gptel-model 'claude-sonnet-4-20250514
+ gptel-model 'claude-sonnet-4-20250514 ; 'claude-opus-4-20250514
  gptel-backend gptel-anthropic-backend
 
  ;; gptel-model 'gemini-2.0-flash
@@ -428,12 +428,12 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
 
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
 
-;; (setq mcp-hub-servers
-;;       '(("filesystem" .
-;;          (:command "npx" :args
-;;                    ("-y" "@modelcontextprotocol/server-filesystem" "/home/bronsa/src/metabase/src")))))
+(setq mcp-hub-servers
+      '(("clojure-mcp" .
+         (:command "clojure" :args
+                   ("-X:mcp" ":port" "7888")))))
 
-(add-hook 'after-init-hook #'mcp-hub-start-all-server)
+;; (add-hook 'after-init-hook #'mcp-hub-start-all-server)
 
 (defun magit-git-insert--add-ref-limits (orig-fun &rest args)
   (if (string= (car args) "for-each-ref")
