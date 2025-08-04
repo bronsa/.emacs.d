@@ -292,3 +292,6 @@
 [submodule "libs/claude-code"]
 	path = libs/claude-code
 	url = https://github.com/stevemolitor/claude-code.el.git
+[submodule "libs/rg"]
+	path = libs/rg
+	url = https://github.com/dajva/rg.el.git

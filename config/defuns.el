@@ -149,3 +149,13 @@
     (goto-char (point-min))
     (while (search-forward (string ?\C-m) nil t)
       (replace-match (string ?\C-j) nil t))))
+
+(defun cider-find-defmethod ()
+  "Quickly find defmethod implementations using ripgrep."
+  (interactive)
+  (let ((symbol (cider-symbol-at-point)))
+    (when symbol
+      (let ((bare-name (if (string-match "/\\([^/]+\\)$" symbol)
+                          (match-string 1 symbol)
+                        symbol)))
+        (projectile-ripgrep (format "\\(defmethod\\s+[^\\s]*%s\\b" bare-name) t)))))

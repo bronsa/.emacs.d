@@ -127,6 +127,7 @@ pair.
         popwin
         queue
         reason-mode
+        rg
         rust-mode
         s
         seq
@@ -156,6 +157,7 @@ pair.
         auto-highlight-symbol
         cider
         cider-ns
+        cider-xref
         cider-scratch
         claude-code
         clojure-mode
@@ -205,6 +207,7 @@ pair.
         projectile
         popwin
         ;; reason-mode
+        rg
         rust-mode
         saveplace
         smex
