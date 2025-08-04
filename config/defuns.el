@@ -5,27 +5,6 @@
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
-(defun nopaste ()
-  "Posts the current buffer or region to sprunge"
-  (interactive)
-  (let* ((start (if (use-region-p) (region-beginning) (point-min)))
-         (end (if (use-region-p) (region-end) (point-max)))
-         (content (buffer-substring-no-properties start end)))
-    (async-start
-     `(lambda ()
-        ,(async-inject-variables "\\`content\\'")
-        (let ((filename "/tmp/sprunge-post"))
-          (with-temp-buffer
-            (let ((coding-system-for-read 'utf-8)
-                  (coding-system-for-write 'utf-8))
-              (insert content)
-              (write-file filename)))
-          (substring (shell-command-to-string (concat "curl -s -F 'sprunge=<" filename "' http://sprunge.us")) 0 -1)))
-
-     (lambda (res)
-       (kill-new res)
-       (message res)))))
-
 (defun wc (&optional start end)
   "Prints number of lines, words and characters in region or whole buffer."
   (interactive)
@@ -36,7 +15,6 @@
       (goto-char start)
       (while (< (point) end) (if (forward-word 1) (setq n (1+ n)))))
     (message "%3d %3d %3d" (count-lines start end) n (- end start))))
-
 
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
