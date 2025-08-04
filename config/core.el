@@ -62,14 +62,13 @@ pair.
 (defun load-config-file (f)
   (load-file (concat config-dir f)))
 
-
-
 (setq load-paths
       '(
         apiwrap
         async
         auto-highlight-symbol
         cider
+        claude-code
         clojure-mode
         color-theme
         company
@@ -79,6 +78,7 @@ pair.
         dockerfile-mode
         dune/editor-integration/emacs
         diff-hl
+        eat
         editorconfig-emacs
         emacs-dune-format
         emacs-reformatter
@@ -157,6 +157,7 @@ pair.
         cider
         cider-ns
         cider-scratch
+        claude-code
         clojure-mode
         color-theme
         company

@@ -175,7 +175,10 @@
 (define-key cider-clojure-interaction-mode-map [remap cider-load-file]
             #'cider-scratch-reset)
 
+(global-unset-key (kbd "C-x l"))
+
 (global-set-key (kbd "C-c L") #'gptel-send)
 (global-set-key (kbd "C-c l") #'gptel)
+(global-set-key (kbd "C-x l") #'claude-code-transient)
 (global-set-key (kbd "C-c r") #'gptel-rewrite)
 (global-set-key (kbd "C-c j") #'gptel-menu)

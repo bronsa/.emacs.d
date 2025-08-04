@@ -463,3 +463,22 @@ An ocaml atom is any string containing [a-z_0-9A-Z`.]."
                (oref (transient--init-prefix (car prefixes)) scope))))
     (and-let* ((obj (transient-prefix-object)))
       (oref obj scope))))
+
+(defvar project-local-elisp-loaded-projects nil)
+
+(defun load-project-local-elisp ()
+  (when-let ((project-root (projectile-project-root)))
+    (unless (member project-root project-local-elisp-loaded-projects)
+      (let ((local-dir (expand-file-name "local" project-root)))
+        (when (file-directory-p local-dir)
+          (dolist (file (directory-files local-dir t "\\.el$"))
+            (unless (file-directory-p file)
+              (message "Loading project-local elisp: %s" file)
+              (load-file file)))
+          (push project-root project-local-elisp-loaded-projects))))))
+
+(add-hook 'projectile-after-switch-project-hook #'load-project-local-elisp)
+(add-hook 'projectile-find-file-hook #'load-project-local-elisp)
+(add-hook 'find-file-hook #'load-project-local-elisp)
+
+(setq-default cider-repl-display-help-banner nil)

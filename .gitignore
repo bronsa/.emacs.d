@@ -22,3 +22,4 @@ eln-cache
 multisession
 *.eld
 transient/history.el
+eshell/lastdir
