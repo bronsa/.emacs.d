@@ -68,7 +68,6 @@ pair.
         async
         auto-highlight-symbol
         cider
-        claude-code
         clojure-mode
         color-theme
         company
@@ -159,7 +158,6 @@ pair.
         cider-ns
         cider-xref
         cider-scratch
-        claude-code
         clojure-mode
         color-theme
         company
