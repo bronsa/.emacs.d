@@ -78,6 +78,7 @@ pair.
         dune/editor-integration/emacs
         diff-hl
         eat
+        eca
         editorconfig-emacs
         emacs-dune-format
         emacs-reformatter
@@ -167,6 +168,7 @@ pair.
         dune
         flymake
         project
+        eca
         eglot
         dune-format
         flycheck-clj-kondo

@@ -292,3 +292,6 @@
 [submodule "libs/rg"]
 	path = libs/rg
 	url = https://github.com/dajva/rg.el.git
+[submodule "libs/eca"]
+	path = libs/eca
+	url = https://github.com/editor-code-assistant/eca-emacs.git
