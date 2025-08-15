@@ -14,6 +14,7 @@
                  (equal "*OCaml*" (buffer-name (current-buffer)))
                  (equal "*ielm*" (buffer-name (current-buffer)))
                  (equal "*Gemini*" (buffer-name (current-buffer)))
+                 (string-match "<eca.*>" (buffer-name (current-buffer)))
                  (equal "*Claude*" (buffer-name (current-buffer)))
                  (equal "*Mcp-Hub*" (buffer-name (current-buffer)))
                  (equal "*Python*" (buffer-name (current-buffer)))
