@@ -295,3 +295,6 @@
 [submodule "libs/eca"]
 	path = libs/eca
 	url = https://github.com/editor-code-assistant/eca-emacs.git
+[submodule "libs/scala-mode"]
+	path = libs/scala-mode
+	url = https://github.com/emacsmirror/scala-mode.git

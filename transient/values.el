@@ -3,5 +3,6 @@
  (magit-log:magit-log-mode "-n256" "--graph" "--color" "--decorate")
  (magit-margin-settings)
  (magit-merge "--no-ff")
+ (magit-push)
  (magit-rebase "--autostash")
  (magit-show-refs))

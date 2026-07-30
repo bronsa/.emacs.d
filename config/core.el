@@ -130,6 +130,7 @@ pair.
         rg
         rust-mode
         s
+        scala-mode
         seq
         sesman
         smex
@@ -210,6 +211,7 @@ pair.
         rg
         rust-mode
         saveplace
+        scala-mode
         smex
         string-inflection
         sql
